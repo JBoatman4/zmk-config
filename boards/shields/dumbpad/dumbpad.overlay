@@ -20,22 +20,22 @@
 
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
+        diode-direction = "row2col";
         wakeup-source;
 
         row-gpios
-            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D21 -> Label 031
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D20 -> Label 029
-            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D19 -> Label 002
-            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D18 -> Label 115
+            = <&gpio0 31 GPIO_ACTIVE_HIGH> // D21 -> Label 031
+            , <&gpio0 29 GPIO_ACTIVE_HIGH> // D20 -> Label 029
+            , <&gpio0 2  GPIO_ACTIVE_HIGH> // D19 -> Label 002
+            , <&gpio1 15 GPIO_ACTIVE_HIGH> // D18 -> Label 115
             ;
 
         col-gpios
-            = <&gpio0 6  GPIO_ACTIVE_HIGH> // D1  -> Label 006
-            , <&gpio0 8  GPIO_ACTIVE_HIGH> // D0  -> Label 008
-            , <&gpio0 17 GPIO_ACTIVE_HIGH> // D2  -> Label 017
-            , <&gpio0 9  GPIO_ACTIVE_HIGH> // D10 -> Label 009
-            , <&gpio1 13 GPIO_ACTIVE_HIGH> // D15 -> Label 113
+            = <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D1  -> Label 006
+            , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D0  -> Label 008
+            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D2  -> Label 017
+            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D10 -> Label 009
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D15 -> Label 113
             ;
     };
 

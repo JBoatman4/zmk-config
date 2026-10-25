@@ -14,7 +14,7 @@
             RC(0,0) RC(0,1) RC(0,2) RC(0,3)
             RC(1,0) RC(1,1) RC(1,2) RC(1,3)
             RC(2,0) RC(2,1) RC(2,2) RC(2,3)
-            RC(3,0) RC(3,0) RC(3,1) RC(3,2) RC(3,3)
+            RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4)
         >;
     };
 
@@ -24,24 +24,25 @@
         wakeup-source;
 
         row-gpios
-            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D21 -> Label 031 (Row 0)
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D20 -> Label 029 (Row 1)
-            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D19 -> Label 002 (Row 2)
-            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D18 -> Label 115 (Row 3)
+            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F4 -> nice!nano 031
+            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F5 -> nice!nano 029
+            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F6 -> nice!nano 002
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F7 -> nice!nano 115
             ;
 
         col-gpios
-            = <&gpio1 13 GPIO_ACTIVE_HIGH> // D15 -> Label 113 (Col 0)
-            , <&gpio1 11 GPIO_ACTIVE_HIGH> // D14 -> Label 111 (Col 1)
-            , <&gpio0 10 GPIO_ACTIVE_HIGH> // D16 -> Label 010 (Col 2)
-            , <&gpio0 9  GPIO_ACTIVE_HIGH> // D10 -> Label 009 (Col 3)
+            = <&gpio1 13 GPIO_ACTIVE_HIGH> // PCB B1 -> nice!nano 113
+            , <&gpio1 11 GPIO_ACTIVE_HIGH> // PCB B3 -> nice!nano 111
+            , <&gpio0 10 GPIO_ACTIVE_HIGH> // PCB B2 -> nice!nano 010
+            , <&gpio0 9  GPIO_ACTIVE_HIGH> // PCB B6 -> nice!nano 009
+            , <&gpio0 11 GPIO_ACTIVE_HIGH> // PCB E6 -> nice!nano 011
             ;
     };
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // D4 -> Label 022
-        b-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // D16 -> Label 010
+        a-gpios = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // PCB D4 -> nice!nano 022
+        b-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // PCB B2 -> nice!nano 010
         steps = <80>;
     };
 

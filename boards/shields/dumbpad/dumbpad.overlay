@@ -24,25 +24,25 @@
         wakeup-source;
 
         row-gpios
-            = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Pro Micro 21
-            , <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Pro Micro 20
-            , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Pro Micro 19
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Pro Micro 18
+            = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Pro Micro F4 -> Label 029 (D21)
+            , <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Pro Micro F5 -> Label 031 (D20)
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Pro Micro F6 -> Label 115 (D19)
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Pro Micro F7 -> Label 113 (D18)
             ;
 
         col-gpios
-            = <&gpio0 8  GPIO_ACTIVE_HIGH> // Pro Micro 15
-            , <&gpio0 7  GPIO_ACTIVE_HIGH> // Pro Micro 14
-            , <&gpio0 17 GPIO_ACTIVE_HIGH> // Pro Micro 16
-            , <&gpio1 9  GPIO_ACTIVE_HIGH> // Pro Micro 10
-            , <&gpio0 2  GPIO_ACTIVE_HIGH> // Pro Micro 2
+            = <&gpio0 6  GPIO_ACTIVE_HIGH> // Pro Micro B1 -> Label 006 (D1)
+            , <&gpio0 8  GPIO_ACTIVE_HIGH> // Pro Micro B3 -> Label 008 (D0)
+            , <&gpio0 17 GPIO_ACTIVE_HIGH> // Pro Micro B2 -> Label 017 (D2)
+            , <&gpio1 9  GPIO_ACTIVE_HIGH> // Pro Micro B6 -> Label 109 (D10)
+            , <&gpio0 2  GPIO_ACTIVE_HIGH> // Pro Micro E6 -> Label 002 (D15)
             ;
     };
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Pro Micro 4
-        b-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Pro Micro 16
+        a-gpios = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Pro Micro D4 -> Label 022 (D4)
+        b-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Pro Micro B2 -> Label 017 (D2)
         steps = <80>;
     };
 

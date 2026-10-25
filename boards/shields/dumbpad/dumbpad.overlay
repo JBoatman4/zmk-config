@@ -20,22 +20,22 @@
 
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
+        diode-direction = "row2col";
         wakeup-source;
 
         row-gpios
-            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F4 -> nice!nano 031
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F5 -> nice!nano 029
-            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F6 -> nice!nano 002
-            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F7 -> nice!nano 115
+            = <&gpio0 31 GPIO_ACTIVE_HIGH> // PCB F4 -> nice!nano 031
+            , <&gpio0 29 GPIO_ACTIVE_HIGH> // PCB F5 -> nice!nano 029
+            , <&gpio0 2  GPIO_ACTIVE_HIGH> // PCB F6 -> nice!nano 002
+            , <&gpio1 15 GPIO_ACTIVE_HIGH> // PCB F7 -> nice!nano 115
             ;
 
         col-gpios
-            = <&gpio1 13 GPIO_ACTIVE_HIGH> // PCB B1 -> nice!nano 113
-            , <&gpio1 11 GPIO_ACTIVE_HIGH> // PCB B3 -> nice!nano 111
-            , <&gpio0 10 GPIO_ACTIVE_HIGH> // PCB B2 -> nice!nano 010
-            , <&gpio0 9  GPIO_ACTIVE_HIGH> // PCB B6 -> nice!nano 009
-            , <&gpio0 11 GPIO_ACTIVE_HIGH> // PCB E6 -> nice!nano 011
+            = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB B1 -> nice!nano 113
+            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB B3 -> nice!nano 111
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB B2 -> nice!nano 010
+            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB B6 -> nice!nano 009
+            , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB E6 -> nice!nano 011
             ;
     };
 

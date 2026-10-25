@@ -20,29 +20,29 @@
 
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "row2col";
+        diode-direction = "col2row";
         wakeup-source;
 
         row-gpios
-            = <&gpio0 31 GPIO_ACTIVE_HIGH> // D21 -> Label 031
-            , <&gpio0 29 GPIO_ACTIVE_HIGH> // D20 -> Label 029
-            , <&gpio0 2  GPIO_ACTIVE_HIGH> // D19 -> Label 002
-            , <&gpio1 15 GPIO_ACTIVE_HIGH> // D18 -> Label 115
+            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F4 -> nice!nano 031
+            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F5 -> nice!nano 029
+            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F6 -> nice!nano 002
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // PCB F7 -> nice!nano 115
             ;
 
         col-gpios
-            = <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D1  -> Label 006
-            , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D0  -> Label 008
-            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D2  -> Label 017
-            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D10 -> Label 009
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D15 -> Label 113
+            = <&gpio1 13 GPIO_ACTIVE_HIGH> // PCB B1 -> nice!nano 113
+            , <&gpio1 11 GPIO_ACTIVE_HIGH> // PCB B3 -> nice!nano 111
+            , <&gpio0 10 GPIO_ACTIVE_HIGH> // PCB B2 -> nice!nano 010
+            , <&gpio0 9  GPIO_ACTIVE_HIGH> // PCB B6 -> nice!nano 009
+            , <&gpio0 11 GPIO_ACTIVE_HIGH> // PCB E6 -> nice!nano 011
             ;
     };
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // D4 -> Label 022
-        b-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // D2 -> Label 017
+        a-gpios = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // PCB D4 -> nice!nano 022
+        b-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // PCB B2 -> nice!nano 010
         steps = <80>;
     };
 

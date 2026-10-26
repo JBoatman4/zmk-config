@@ -4,6 +4,16 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
+        zmk,studio-lock = &studio_lock;
+        zmk,studio-rpc-transport = &studio_rpc_usb;
+    };
+
+    studio_lock: studio_lock {
+        compatible = "zmk,studio-lock-none";
+    };
+
+    studio_rpc_usb: studio_rpc_usb {
+        compatible = "zmk,studio-rpc-usb";
     };
 
     default_transform: keymap_transform_0 {

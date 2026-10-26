@@ -21,24 +21,22 @@
 
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "row2col"; // Flipped to match your diodes
+        diode-direction = "col2row";
         wakeup-source;
 
-        // Rows are now outputs
         row-gpios
-            = <&pro_micro_a 3 GPIO_ACTIVE_HIGH>
-            , <&pro_micro_a 2 GPIO_ACTIVE_HIGH>
-            , <&pro_micro_a 1 GPIO_ACTIVE_HIGH>
-            , <&pro_micro_a 0 GPIO_ACTIVE_HIGH>
+            = <&pro_micro_a 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro_a 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro_a 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro_a 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
 
-        // Columns are now inputs
         col-gpios
-            = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 15 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 16 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 10 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 7  GPIO_ACTIVE_HIGH>
             ;
     };
 

@@ -1,13 +1,12 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        // Studio requires no default matrix transform here; it is moved to the physical layout instead
+        zmk,physical-layout = &dumbpad_layout; // Tell ZMK Studio exactly where your layout is defined
     };
 
-    // This section tells ZMK Studio how to map and display your keys visually in the app interface
     dumbpad_layout: dumbpad_layout {
         compatible = "zmk,physical-layout";
-        display-name = "Dumbpad Layout";
+        display-name = "Dumbpad";
         transform = <&default_transform>;
         kscan = <&kscan0>;
     };
